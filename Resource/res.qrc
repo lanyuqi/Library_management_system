@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="pic/">
+    <file>tushuyuyue.png</file>
+    <file>xuesheng.png</file>
+    <file>guanliyuan.png</file>
+    <file>icon-out.png</file>
+    <file>jieyuetongji.png</file>
+    <file>tuichu.png</file>
+    <file>tushu.png</file>
+  </qresource>
+</RCC>
