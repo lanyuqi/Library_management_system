@@ -9,6 +9,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QMessageBox>
+#include <QSettings>
 #include "ui_Database.h"
 
 
@@ -17,14 +18,21 @@ Database::Database(QWidget *parent) :
     ui->setupUi(this);
 
     this->setWindowTitle("数据库");
+    // 读取配置文件
+    QSettings settings("../config.ini", QSettings::IniFormat);
+    QString hostname = settings.value("database/hostname").toString();
+    int port = settings.value("database/port").toInt();
+    QString dbName = settings.value("database/name").toString();
+    QString username = settings.value("database/username").toString();
+    QString password = settings.value("database/password").toString();
 
     //连接数据库
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("175.178.88.47");
-    db.setPort(3306);
-    db.setDatabaseName("librarymanage");
-    db.setUserName("LibraryManage");
-    db.setPassword( "ltb85523021");
+    db.setHostName(hostname);
+    db.setPort(port);
+    db.setDatabaseName(dbName);
+    db.setUserName(username);
+    db.setPassword(password);
 
     if (!db.open()) {
         QMessageBox::critical(nullptr, "错误", "无法连接到数据库。");
