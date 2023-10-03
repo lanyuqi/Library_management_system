@@ -1,4 +1,4 @@
 # .gitignore
 cmake-build-debug/
 .idea/
-config.ini/
+config.ini
