@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/qt/6.2.3_1")
+#set(CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/qt/6.2.3_1")
 
 find_package(Qt6 COMPONENTS
         Sql
@@ -52,6 +52,7 @@ add_executable(Library_management_system
         database/StudentSqlModel.cpp
         database/StudentSqlModel.h src/editbookdialog.cpp include/editbookdialog.h src/editbookidalog.ui)
 target_link_libraries(Library_management_system
+
         Qt::Core
         Qt::Gui
         Qt::Sql

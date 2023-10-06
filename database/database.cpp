@@ -26,6 +26,7 @@ Database::Database(QWidget *parent) :
     QString username = settings.value("database/username").toString();
     QString password = settings.value("database/password").toString();
 
+
     //连接数据库
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName(hostname);
